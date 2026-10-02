@@ -3,166 +3,833 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jennifer Tan | Portfolio</title>
+
+  <title>Jingrong (Jennifer) Tan | Portfolio</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #f7f7f7;
-      color: #222;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f8f7f4;
+      color: #1f1f1f;
+      line-height: 1.65;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 28px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #9b5c63;
+    }
+
+
+    /* HERO */
+
+    .hero {
+      max-width: 1120px;
+      margin: auto;
+      padding: 110px 30px 125px;
+    }
+
+    .eyebrow {
+      color: #9b5c63;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 8vw, 90px);
+      line-height: 1.03;
+      letter-spacing: -3px;
+      font-weight: 500;
+      max-width: 900px;
+    }
+
+    .hero-statement {
+      margin-top: 35px;
+      max-width: 720px;
+      font-size: 20px;
+      color: #575757;
       line-height: 1.6;
     }
 
-    header {
-      background-color: #ffffff;
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
-
-    header p {
-      font-size: 18px;
-      color: #666;
-      max-width: 750px;
-      margin: 15px auto 0;
-    }
-
-    nav {
-      background-color: #222;
-      text-align: center;
-      padding: 14px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 18px;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      border-bottom: 2px solid #222;
-      padding-bottom: 8px;
-    }
-
-    .skills {
+    .contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px 28px;
+      margin-top: 42px;
+      padding-top: 28px;
+      border-top: 1px solid #d8d5cf;
+      max-width: 850px;
     }
 
-    .skill {
-      background-color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
+    .contact a,
+    .contact span {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    .project {
-      background-color: white;
-      padding: 20px;
+    .contact a:hover {
+      color: #9b5c63;
+    }
+
+
+    /* GENERAL */
+
+    section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 95px 30px;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 45px;
+      margin-bottom: 60px;
+      align-items: start;
+    }
+
+    .section-number {
+      font-size: 13px;
+      color: #9b5c63;
+      letter-spacing: 1px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6a6a6a;
+      max-width: 650px;
+    }
+
+
+    /* ABOUT */
+
+    .about-content {
+      margin-left: 165px;
+      max-width: 750px;
+    }
+
+    .about-content p {
+      font-size: 18px;
+      color: #444;
       margin-bottom: 20px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
     }
+
+
+    /* SKILLS */
+
+    .skills-wrapper {
+      margin-left: 165px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #d8d5cf;
+    }
+
+    .skill-category {
+      padding: 30px 30px 30px 0;
+      border-bottom: 1px solid #d8d5cf;
+    }
+
+    .skill-category h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: #9b5c63;
+      margin-bottom: 14px;
+    }
+
+    .skill-category p {
+      color: #444;
+      font-size: 15px;
+      padding-right: 20px;
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience-list {
+      margin-left: 165px;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 45px;
+      padding: 45px 0;
+      border-top: 1px solid #d8d5cf;
+    }
+
+    .experience-date {
+      color: #747474;
+      font-size: 14px;
+      padding-top: 4px;
+    }
+
+    .experience-content h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .role {
+      color: #9b5c63;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .location {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .experience-content ul {
+      padding-left: 19px;
+      color: #484848;
+    }
+
+    .experience-content li {
+      margin-bottom: 12px;
+      padding-left: 5px;
+    }
+
+
+    /* SMALL TAGS */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 25px;
+    }
+
+    .tag {
+      border: 1px solid #d0ccc5;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      color: #555;
+      background: #fbfaf7;
+    }
+
+
+    /* FOOTER */
 
     footer {
-      text-align: center;
-      padding: 30px;
-      background-color: #222;
+      margin-top: 70px;
+      background: #202020;
       color: white;
-      margin-top: 60px;
     }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: auto;
+      padding: 70px 30px;
+    }
+
+    .footer-inner h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 30px;
+      margin-bottom: 55px;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #444;
+      padding-top: 25px;
+      font-size: 12px;
+      color: #929292;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 22px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 75px 22px 90px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 75px 22px;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .about-content,
+      .skills-wrapper,
+      .experience-list {
+        margin-left: 0;
+      }
+
+      .skills-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-<header>
-  <h1>Jennifer Tan</h1>
-  <p>
-    Marketing student at Rutgers Business School with interests in digital marketing,
-    strategy, consulting, and data-driven business decision making.
-  </p>
-</header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-</nav>
+  <!-- NAVIGATION -->
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a Marketing student at Rutgers Business School interested in understanding
-    consumer behavior, developing effective marketing strategies, and using data to
-    support business decisions. Through internship, volunteer, and project experiences,
-    I have developed skills in marketing research, communication, teamwork, and project coordination.
-  </p>
-</section>
+  <nav>
+    <div class="logo">JINGRONG TAN</div>
 
-<section id="skills">
-  <h2>Skills</h2>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <div class="skills">
-    <div class="skill">Digital Marketing</div>
-    <div class="skill">Market Research</div>
-    <div class="skill">Social Media Marketing</div>
-    <div class="skill">Data Analysis</div>
-    <div class="skill">Project Coordination</div>
-    <div class="skill">Team Collaboration</div>
-    <div class="skill">Microsoft Office</div>
-    <div class="skill">English & Chinese</div>
-  </div>
-</section>
 
-<section id="projects">
-  <h2>Projects & Experience</h2>
 
-  <div class="project">
-    <h3>Mango TV – PR & Influencer Marketing</h3>
-    <p>
-      Conducted research on influencers aligned with brand positioning and evaluated
-      potential partners using audience and engagement data. Supported influencer
-      outreach and marketing campaigns that generated approximately 100,000 additional views.
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      Marketing · Strategy · Consulting
+    </div>
+
+    <h1>
+      Jingrong (Jennifer) Tan
+    </h1>
+
+    <p class="hero-statement">
+      Marketing student at Rutgers Business School interested in digital marketing,
+      strategy, consulting, and using data to understand consumers and support
+      better business decisions.
     </p>
-  </div>
 
-  <div class="project">
-    <h3>Linzhi Wanda Yihua Hotel – Digital Marketing</h3>
-    <p>
-      Supported digital marketing efforts by researching competitors, exploring
-      partnerships with travel and livestreaming platforms, and assisting with social
-      media content planning during the hotel's pre-opening stage.
-    </p>
-  </div>
+    <div class="contact">
+      <span>New Brunswick, NJ</span>
 
-  <div class="project">
-    <h3>Stray Dog Adoption Event</h3>
-    <p>
-      Coordinated schedules for more than 20 volunteers and collaborated with local
-      businesses and a veterinary hospital to organize an adoption event. The event
-      helped 23 dogs find new homes.
-    </p>
-  </div>
+      <a href="tel:8483915574">
+        848-391-5574
+      </a>
 
-</section>
+      <a href="mailto:jt1450@rutgers.edu">
+        jt1450@rutgers.edu
+      </a>
 
-<footer>
-  <p>© 2026 Jennifer Tan | Personal Portfolio</p>
-</footer>
+      <a href="mailto:tanjennifer443@gmail.com">
+        tanjennifer443@gmail.com
+      </a>
+    </div>
+
+  </header>
+
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-header">
+
+      <div class="section-number">
+        01
+      </div>
+
+      <div class="section-title">
+        <h2>About Me</h2>
+
+        <p>
+          A little more about my interests, background, and the type of work
+          I enjoy doing.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+      <p>
+        I am a Marketing student at Rutgers Business School with experience
+        across digital marketing, public relations, market research, and
+        project coordination.
+      </p>
+
+      <p>
+        I enjoy understanding why people make certain decisions and turning
+        that information into practical marketing strategies. My experiences
+        in media, hospitality, and community projects have also taught me how
+        to communicate with different stakeholders, coordinate teams, and
+        adapt quickly when working on real projects.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="section-header">
+
+      <div class="section-number">
+        02
+      </div>
+
+      <div class="section-title">
+        <h2>Skills</h2>
+
+        <p>
+          Skills I have developed through coursework, internships,
+          leadership experiences, and personal interests.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="skills-wrapper">
+
+      <div class="skill-category">
+        <h3>Marketing</h3>
+        <p>
+          Digital Marketing, Market Research, Social Media Marketing,
+          Influencer Research, Content Strategy
+        </p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Business</h3>
+        <p>
+          Data Analysis, Project Coordination, Partner Research,
+          Team Collaboration
+        </p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Technical</h3>
+        <p>
+          Microsoft Excel, PowerPoint, Word, Adobe Photoshop
+        </p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Languages</h3>
+        <p>
+          Mandarin Chinese — Native<br>
+          English — Fluent<br>
+          Korean — Conversational
+        </p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Interests</h3>
+        <p>
+          Photography, Asian Languages & Cultures, Consumer Behavior
+        </p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Areas of Interest</h3>
+        <p>
+          Marketing Strategy, Consulting, Digital Media,
+          Consumer Insights
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+
+    <div class="section-header">
+
+      <div class="section-number">
+        03
+      </div>
+
+      <div class="section-title">
+
+        <h2>Projects & Experience</h2>
+
+        <p>
+          Selected professional, leadership, and community experiences
+          where I applied marketing, communication, and coordination skills.
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="experience-list">
+
+
+      <!-- WANDA -->
+
+      <article class="experience-item">
+
+        <div class="experience-date">
+          Dec 2025 — Present
+        </div>
+
+        <div class="experience-content">
+
+          <h3>Wanda Yihua Hotel Nyingchi</h3>
+
+          <div class="role">
+            Remote Marketing Assistant
+          </div>
+
+          <div class="location">
+            Nyingchi, Tibet, China
+          </div>
+
+          <ul>
+
+            <li>
+              Work remotely with the hotel team to coordinate pre-opening
+              marketing activities and support preparations for the hotel's launch.
+            </li>
+
+            <li>
+              Researched five livestreaming platforms and helped evaluate potential
+              partnership opportunities as the hotel explored livestreaming as a
+              new promotional channel before opening.
+            </li>
+
+            <li>
+              Communicated with online travel platforms, including Trip.com China,
+              to compare promotional opportunities and understand how different
+              booking channels could influence hotel bookings and sales.
+            </li>
+
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Digital Marketing</span>
+            <span class="tag">Platform Research</span>
+            <span class="tag">Partnerships</span>
+            <span class="tag">Hospitality</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- MANGO TV -->
+
+      <article class="experience-item">
+
+        <div class="experience-date">
+          May 2026 — Sep 2026
+        </div>
+
+        <div class="experience-content">
+
+          <h3>Mango TV</h3>
+
+          <div class="role">
+            Public Relations Intern
+          </div>
+
+          <div class="location">
+            Changsha, Hunan, China
+          </div>
+
+          <ul>
+
+            <li>
+              Analyzed client needs to identify suitable social media platforms,
+              promotional approaches, and content strategies for different campaigns.
+            </li>
+
+            <li>
+              Researched and screened more than 100 social media influencers across
+              multiple campaigns based on brand positioning, target audience,
+              content relevance, and potential commercial value.
+            </li>
+
+            <li>
+              Contacted more than 20 selected influencers, communicated campaign
+              requirements, and coordinated with creators throughout the
+              collaboration process.
+            </li>
+
+            <li>
+              Supported influencer marketing initiatives that contributed to
+              approximately 100,000 additional views and increased campaign exposure.
+            </li>
+
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Public Relations</span>
+            <span class="tag">Influencer Marketing</span>
+            <span class="tag">Audience Research</span>
+            <span class="tag">Campaign Coordination</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ANIMAL RESCUE -->
+
+      <article class="experience-item">
+
+        <div class="experience-date">
+          Mar 2025 — Jul 2025
+        </div>
+
+        <div class="experience-content">
+
+          <h3>Stray Animal Rescue Program</h3>
+
+          <div class="role">
+            Volunteer Project Coordinator
+          </div>
+
+          <div class="location">
+            Changsha, China
+          </div>
+
+          <ul>
+
+            <li>
+              Reached out to local businesses and secured partnerships with
+              five businesses and one veterinary hospital to provide resources
+              and supplies for rescue activities.
+            </li>
+
+            <li>
+              Partnered with members of the local community to organize a dog
+              adoption event at one of Changsha's busiest shopping malls.
+            </li>
+
+            <li>
+              Coordinated logistics and supplies with more than 20 volunteers
+              and local business partners to keep the adoption event running smoothly.
+            </li>
+
+            <li>
+              The event helped 23 dogs find new homes while increasing community
+              awareness of local animal rescue efforts.
+            </li>
+
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Project Coordination</span>
+            <span class="tag">Community Outreach</span>
+            <span class="tag">Partnership Development</span>
+            <span class="tag">Event Planning</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- TEACHING -->
+
+      <article class="experience-item">
+
+        <div class="experience-date">
+          One-month program
+        </div>
+
+        <div class="experience-content">
+
+          <h3>Volunteer Teaching Program</h3>
+
+          <div class="role">
+            Volunteer Teacher
+          </div>
+
+          <div class="location">
+            Rural China
+          </div>
+
+          <ul>
+
+            <li>
+              Identified teaching needs at a local school and reached out to
+              suitable volunteers for subjects where additional support was needed.
+            </li>
+
+            <li>
+              Collaborated with other volunteers to prepare lessons and organize
+              teaching materials before classes.
+            </li>
+
+            <li>
+              Taught English, Chinese, and basic mathematics to more than
+              20 students during the one-month volunteer teaching program.
+            </li>
+
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Teaching</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Volunteer Service</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+
+    <div class="footer-inner">
+
+      <h2>
+        Let's connect.
+      </h2>
+
+      <div class="footer-links">
+
+        <a href="mailto:jt1450@rutgers.edu">
+          jt1450@rutgers.edu
+        </a>
+
+        <a href="mailto:tanjennifer443@gmail.com">
+          tanjennifer443@gmail.com
+        </a>
+
+        <a href="tel:8483915574">
+          848-391-5574
+        </a>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Jingrong (Jennifer) Tan · Personal Portfolio
+      </div>
+
+    </div>
+
+  </footer>
+
 
 </body>
 </html>
